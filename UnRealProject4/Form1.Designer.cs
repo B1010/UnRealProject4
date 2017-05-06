@@ -233,8 +233,8 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.98222F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.01778F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.84542F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.15458F));
             this.tableLayoutPanel3.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox9, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 152);
@@ -257,10 +257,11 @@
             // textBox9
             // 
             this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox9.Location = new System.Drawing.Point(170, 3);
+            this.textBox9.Location = new System.Drawing.Point(169, 3);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(558, 20);
+            this.textBox9.Size = new System.Drawing.Size(559, 20);
             this.textBox9.TabIndex = 3;
+            this.textBox9.Text = "Формулы нет!";
             // 
             // label10
             // 
