@@ -89,9 +89,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(554, 19);
+            this.button1.Location = new System.Drawing.Point(518, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 104);
+            this.button1.Size = new System.Drawing.Size(219, 104);
             this.button1.TabIndex = 0;
             this.button1.Text = "Поиск";
             this.button1.UseVisualStyleBackColor = true;

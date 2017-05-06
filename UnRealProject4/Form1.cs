@@ -19,7 +19,9 @@ namespace UnRealProject4
 
         private void button1_Click(object sender, EventArgs e)
         {
+            RegularExample finder = new RegularExample();
 
+            textBox1.Text = Convert.ToString(finder.eMailFinder(richTextBox1.Text));
         }
     }
 }
