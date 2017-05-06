@@ -156,9 +156,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "eMail в тексте";
+            this.label4.Text = "IP адресса в тексте";
             // 
             // textBox1
             // 
@@ -291,9 +291,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 84);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.Size = new System.Drawing.Size(103, 13);
             this.label8.TabIndex = 2;
-            this.label8.Text = "eMail в тексте";
+            this.label8.Text = "Пробелов в тексте";
             // 
             // Form1
             // 
