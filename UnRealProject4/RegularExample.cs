@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace UnRealProject4
 {
@@ -41,9 +36,21 @@ namespace UnRealProject4
             MatchCollection matches = format.Matches(textfrombox);
             return matches.Count;
         }
+        public int ruschar(string textfrombox) // Ищем русские буквы
+        {
+            Regex format = new Regex(@"[А-Яа-я]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            MatchCollection matches = format.Matches(textfrombox);
+            return matches.Count;
+        }
         public int numbers(string textfrombox) // Ищем цифры
         {
             Regex format = new Regex(@"[0-9]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            MatchCollection matches = format.Matches(textfrombox);
+            return matches.Count;
+        }
+        public int handmade(string textfrombox, string regexformula) // Ищем вручную
+        {
+            Regex format = new Regex(@regexformula, RegexOptions.Compiled | RegexOptions.IgnoreCase);
             MatchCollection matches = format.Matches(textfrombox);
             return matches.Count;
         }
