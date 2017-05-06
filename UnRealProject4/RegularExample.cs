@@ -30,25 +30,31 @@ namespace UnRealProject4
             MatchCollection matches = format.Matches(textfrombox);
             return matches.Count;
         }
-        public int engchar(string textfrombox) // Ищем английские буквы
+        public int engcharFinder(string textfrombox) // Ищем английские буквы
         {
             Regex format = new Regex(@"[A-Za-z]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             MatchCollection matches = format.Matches(textfrombox);
             return matches.Count;
         }
-        public int ruschar(string textfrombox) // Ищем русские буквы
+        public int ruscharFinder(string textfrombox) // Ищем русские буквы
         {
             Regex format = new Regex(@"[А-Яа-я]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             MatchCollection matches = format.Matches(textfrombox);
             return matches.Count;
         }
-        public int numbers(string textfrombox) // Ищем цифры
+        public int numbersFinder(string textfrombox) // Ищем цифры
         {
             Regex format = new Regex(@"[0-9]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             MatchCollection matches = format.Matches(textfrombox);
             return matches.Count;
         }
-        public int handmade(string textfrombox, string regexformula) // Ищем вручную
+        public int wordsFinder(string textfrombox) // Ищем слова
+        {
+            Regex format = new Regex(@"([A-Za-z]|[А-Яа-я])+", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            MatchCollection matches = format.Matches(textfrombox);
+            return matches.Count;
+        }
+        public int handmadeFinder(string textfrombox, string regexformula) // Ищем вручную
         {
             Regex format = new Regex(@regexformula, RegexOptions.Compiled | RegexOptions.IgnoreCase);
             MatchCollection matches = format.Matches(textfrombox);
