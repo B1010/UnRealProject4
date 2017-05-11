@@ -18,6 +18,7 @@ namespace UnRealProject4
 
             textBox1.Text = Convert.ToString(finder.eMailFinder(richTextBox1.Text));
             textBox4.Text = Convert.ToString(finder.ipv4Finder(richTextBox1.Text));
+            textBox3.Text = Convert.ToString(finder.cityFinder(richTextBox1.Text));
             textBox5.Text = Convert.ToString(finder.ipv6Finder(richTextBox1.Text));
             textBox2.Text = Convert.ToString(finder.mobileFinder(richTextBox1.Text));
             textBox7.Text = Convert.ToString(finder.engcharFinder(richTextBox1.Text));

@@ -30,6 +30,12 @@ namespace UnRealProject4
             MatchCollection matches = format.Matches(textfrombox);
             return matches.Count;
         }
+        public int cityFinder(string textfrombox) // Ищем номера мобильных телефонов
+        {
+            Regex format = new Regex(@"(\+\d{1,3}[- ]?)?\d{10}", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            MatchCollection matches = format.Matches(textfrombox);
+            return matches.Count;
+        }
         public int engcharFinder(string textfrombox) // Ищем английские буквы
         {
             Regex format = new Regex(@"[A-Za-z]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
