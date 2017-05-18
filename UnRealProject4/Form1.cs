@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace UnRealProject4
@@ -12,19 +14,48 @@ namespace UnRealProject4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RegularExample finder = new RegularExample();
+            MatchCollection eMailFinder = Regex.Matches(richTextBox1.Text, @"([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)");
+            MatchCollection ipv4Finder = Regex.Matches(richTextBox1.Text, @"\b(?:(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9]))\b");
+            MatchCollection ipv6Finder = Regex.Matches(richTextBox1.Text, @"(?:^|(?<=\s))(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))(?=\s|$)");
+            MatchCollection mobileFinder = Regex.Matches(richTextBox1.Text, @"((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}");
+            MatchCollection htmlFinder = Regex.Matches(richTextBox1.Text, @"<.*html>");
 
-            textBox10.Text = Convert.ToString(finder.handmadeFinder(richTextBox1.Text, textBox9.Text));
 
-            textBox1.Text = Convert.ToString(finder.eMailFinder(richTextBox1.Text));
-            textBox4.Text = Convert.ToString(finder.ipv4Finder(richTextBox1.Text));
-            textBox3.Text = Convert.ToString(finder.cityFinder(richTextBox1.Text));
-            textBox5.Text = Convert.ToString(finder.ipv6Finder(richTextBox1.Text));
-            textBox2.Text = Convert.ToString(finder.mobileFinder(richTextBox1.Text));
-            textBox7.Text = Convert.ToString(finder.engcharFinder(richTextBox1.Text));
-            textBox8.Text = Convert.ToString(finder.ruscharFinder(richTextBox1.Text));
-            textBox6.Text = Convert.ToString(finder.numbersFinder(richTextBox1.Text));
-            textBox11.Text = Convert.ToString(finder.wordsFinder(richTextBox1.Text));
+            foreach (Match ip in eMailFinder)
+            {
+                richTextBox1.SelectionStart = ip.Index;
+                richTextBox1.SelectionLength = ip.Length;
+                richTextBox1.SelectionBackColor = Color.FromArgb(255, 160, 122);
+            }
+
+            foreach (Match ip in ipv4Finder)
+            {
+                richTextBox1.SelectionStart = ip.Index;
+                richTextBox1.SelectionLength = ip.Length;
+                richTextBox1.SelectionBackColor = Color.FromArgb(0, 77, 255);
+            }
+
+            foreach (Match ip in ipv6Finder)
+            {
+                richTextBox1.SelectionStart = ip.Index;
+                richTextBox1.SelectionLength = ip.Length;
+                richTextBox1.SelectionBackColor = Color.FromArgb(80, 200, 120);
+            }
+
+            foreach (Match ip in mobileFinder)
+            {
+                richTextBox1.SelectionStart = ip.Index;
+                richTextBox1.SelectionLength = ip.Length;
+                richTextBox1.SelectionBackColor = Color.FromArgb(255, 223, 0);
+            }
+
+            foreach (Match ip in htmlFinder)
+            {
+                richTextBox1.SelectionStart = ip.Index;
+                richTextBox1.SelectionLength = ip.Length;
+                richTextBox1.SelectionBackColor = Color.FromArgb(0, 191, 255);
+            }
         }
+
     }
 }
